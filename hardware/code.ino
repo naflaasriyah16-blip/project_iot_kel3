@@ -21,14 +21,14 @@ const char* mqtt_server = "broker.emqx.io";
 const int   mqtt_port = 1883;
 
 // Topik Publish
-const char* topic_suhu   = "Proyek2/monitoring/suhu";
-const char* topic_lembab = "Proyek2/monitoring/lembab";
-const char* topic_pompa  = "Proyek2/outputpompa";
+const char* topic_suhu   = "proyek_iot_kel3/monitoring/suhu";
+const char* topic_lembab = "proyek_iot_kel3/monitoring/lembab";
+const char* topic_pompa  = "proyek_iot_kel3/output_pompa";
 
 // Topik Subscribe
-const char* sub_batas_suhu      = "Proyek2/kontrol/batas_suhu";
-const char* sub_batas_lembab    = "Proyek2/kontrol/batas_lembab";
-const char* sub_jadwal_mingguan = "Proyek2/kontrol/jadwal_mingguan";
+const char* sub_batas_suhu      = "proyek_iot_kel3/kontrol/batas_suhu";
+const char* sub_batas_lembab    = "proyek_iot_kel3/kontrol/batas_lembab";
+const char* sub_jadwal_mingguan = "proyek_iot_kel3/kontrol/jadwal_mingguan";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
