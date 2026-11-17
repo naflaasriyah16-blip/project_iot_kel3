@@ -8,7 +8,6 @@
 #define DHTPIN 26
 #define DHTTYPE DHT22
 #define RELAY_PIN 14
-#define BUZZER_PIN 25
 #define TRIGGER_PIN 0
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -68,11 +67,9 @@ void setup() {
   Serial.begin(115200);
   dht.begin();
   pinMode(RELAY_PIN, OUTPUT);
-  pinMode(BUZZER_PIN, OUTPUT);
   pinMode(TRIGGER_PIN, INPUT_PULLUP);
 
   digitalWrite(RELAY_PIN, HIGH);
-  digitalWrite(BUZZER_PIN, LOW);
 
   Serial.println("\n=== IoT Penyiraman Pintar (Full Features) ===");
 
@@ -171,12 +168,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   if (String(topic) == sub_batas_suhu) {
     SUHU_THRESHOLD = message.toFloat();
-    tone(BUZZER_PIN, 2000, 100);
   }
 
   if (String(topic) == sub_batas_lembab) {
     LEMBAB_THRESHOLD = message.toFloat();
-    tone(BUZZER_PIN, 2000, 100);
   }
 
   if (String(topic) == sub_jadwal_mingguan) {
@@ -200,7 +195,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
       JADWAL_MENIT = partJam.substring(titikDua + 1).toInt();
     }
     Serial.println(">>> Jadwal Baru Tersimpan!");
-    tone(BUZZER_PIN, 2000, 300);
   }
 }
 
@@ -215,13 +209,11 @@ void kontrolPompa(bool nyala, int durasi, String pemicu) {
     waktuPompaAkanMati = millis() + (durasi * 1000UL);
     digitalWrite(RELAY_PIN, LOW); // ON
     client.publish(topic_pompa, "ON");
-    tone(BUZZER_PIN, 1000);
     Serial.println("Pompa ON (" + pemicu + ")");
   } else {
     pompaSedangMenyala = false;
     digitalWrite(RELAY_PIN, HIGH); // OFF
     client.publish(topic_pompa, "OFF");
-    noTone(BUZZER_PIN);
     Serial.println("Pompa OFF");
 
     // Saat mati, laporkan 'pemicuTerakhir' (bukan timer_selesai)

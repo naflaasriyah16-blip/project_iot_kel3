@@ -42,7 +42,6 @@ Pengaturan ambang batas (*threshold*), jadwal mingguan, dan riwayat penyiraman.
 - **Compound Logic:** Penyiraman otomatis terjadi jika kondisi kritis terpenuhi (**Suhu > Batas** DAN **Lembab < Batas**).
 - **State Memory:** Mengingat pemicu penyiraman terakhir untuk pelaporan data yang akurat.
 - **Fail-Safe Timer:** Proteksi durasi penyiraman agar pompa tidak menyala terus-menerus.
-- **Local Alert:** Buzzer berbunyi saat penyiraman aktif sebagai indikator fisik.
 
 ---
 
@@ -61,7 +60,6 @@ Mapping pin pada **ESP32 DevKit V1**:
 | :--- | :--- | :--- | :--- |
 | **DHT22** | Input | `GPIO 26` | Sensor Suhu & Kelembapan |
 | **Relay Module** | Output | `GPIO 14` | Trigger Pompa Air (Active Low) |
-| **Buzzer** | Output | `GPIO 25` | Alarm Notifikasi Suara |
 
 ---
 
