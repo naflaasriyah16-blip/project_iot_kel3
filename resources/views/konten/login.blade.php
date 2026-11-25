@@ -46,7 +46,7 @@
   </div>
 
   <div class="image-side">
-    <img src="{{ asset('image/pohon.png') }}" alt="Tanaman" class="image-plant">
+    <img src="{{ asset('image/pohon.png') }}?v=2" alt="Tanaman" class="image-plant">
   </div>
 </div>
 @endsection
