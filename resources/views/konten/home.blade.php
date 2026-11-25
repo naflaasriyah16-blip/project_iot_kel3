@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<h1>Halo,<br>Pak Jondol</h1>
+<h1>Halo,<br>Kelompok 3 IoT</h1>
 
 <div class="card">
     <div class="logo-circle">
@@ -142,7 +142,7 @@
     // --- 1. Konfigurasi Koneksi ---
     const mqtt_broker = "broker.emqx.io";
     const mqtt_port   = 8084;
-    const client_id   = "Web_PakJondol_" + Math.random().toString(16).substr(2, 8);
+    const client_id   = "Web_Kelompok3_" + Math.random().toString(16).substr(2, 8);
 
     const topic_suhu   = "proyek_iot_kel3/monitoring/suhu";
     const topic_lembab = "proyek_iot_kel3/monitoring/lembab";

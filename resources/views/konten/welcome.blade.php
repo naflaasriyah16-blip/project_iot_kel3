@@ -10,8 +10,8 @@
         <div class="judul">
             <h1>
                 Kebun Pintar <br>
-                Jondol Tani <br>
-                Lelea
+                Kelompok 3 <br>
+                IoT
             </h1>
         </div>
     </div>
