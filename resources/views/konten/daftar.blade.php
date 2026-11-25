@@ -2,7 +2,7 @@
 
 @section('title', $title)
 @push('page-styles')
-    <link rel="stylesheet" href="{{ asset('css/daftar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/daftar.css') }}?v=2">
 @endpush
 
 @section('content')
